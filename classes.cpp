@@ -1,3 +1,5 @@
+#include "network/CNetGamePlayer.hpp"
+#include "network/CNetworkPlayerMgr.hpp"
 #include "network/netPlayer.hpp"
 #include "network/netPlayerMgrBase.hpp"
 #include "rage/joaat.hpp"
