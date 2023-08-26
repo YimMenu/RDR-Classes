@@ -7,6 +7,7 @@
 #include "network/rlGamerInfoBase.hpp"
 #include "network/rlGamerInfo.hpp"
 #include "player/CPlayerInfo.hpp"
+#include "rage/atArray.hpp"
 #include "rage/joaat.hpp"
 #include "rage/vector.hpp"
 #include "script/scriptHandlerNetComponent.hpp"
