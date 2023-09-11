@@ -9,6 +9,8 @@
 #include "player/CPlayerInfo.hpp"
 #include "rage/atArray.hpp"
 #include "rage/joaat.hpp"
+#include "rage/rlJson.hpp"
+#include "rage/rlMetric.hpp"
 #include "rage/vector.hpp"
 #include "script/scriptHandlerNetComponent.hpp"
 #include "script/scrNativeHandler.hpp"
