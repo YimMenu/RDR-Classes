@@ -11,6 +11,7 @@
 #include "rage/joaat.hpp"
 #include "rage/rlJson.hpp"
 #include "rage/rlMetric.hpp"
+#include "rage/tlsContext.hpp"
 #include "rage/vector.hpp"
 #include "script/scriptHandlerNetComponent.hpp"
 #include "script/scrNativeHandler.hpp"
