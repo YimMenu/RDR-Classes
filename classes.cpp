@@ -13,6 +13,7 @@
 #include "network/rlGamerInfoBase.hpp"
 #include "network/rlGamerInfo.hpp"
 #include "player/CPlayerInfo.hpp"
+#include "ped/CPed.hpp"
 #include "rage/atArray.hpp"
 #include "rage/joaat.hpp"
 #include "rage/rlJson.hpp"
