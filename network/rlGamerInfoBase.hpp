@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "rlGamerHandle.hpp"
+#include "netPeerAddress.hpp"
 
 #pragma pack(push, 8)
 namespace rage

@@ -8,13 +8,13 @@ namespace rage
 		T data[2];
 		struct { T x, y; };
 
-		vector2(T x, T y) :
+		constexpr vector2(T x, T y) :
 			x(x),
 			y(y)
 		{
 		}
 
-		vector2() :
+		constexpr vector2() :
 			x(),
 			y()
 		{
@@ -27,14 +27,14 @@ namespace rage
 		T data[3];
 		struct { T x, y, z; };
 
-		vector3(T x, T y, T z) :
+		constexpr vector3(T x, T y, T z) :
 			x(x),
 			y(y),
 			z(z)
 		{
 		}
 
-		vector3() :
+		constexpr vector3() :
 			x(),
 			y(),
 			z()
@@ -48,7 +48,7 @@ namespace rage
 		T data[4];
 		struct { T x, y, z, w; };
 
-		vector4(T x, T y, T z, T w) :
+		constexpr vector4(T x, T y, T z, T w) :
 			x(x),
 			y(y),
 			z(z),
@@ -56,7 +56,7 @@ namespace rage
 		{
 		}
 
-		vector4() :
+		constexpr vector4() :
 			x(),
 			y(),
 			z(),
