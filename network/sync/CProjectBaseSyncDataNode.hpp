@@ -8,7 +8,7 @@ namespace rage
 	class netObject;
 }
 
-class CProjectBaseSyncDataNode final : public rage::netSyncDataNode
+class CProjectBaseSyncDataNode : public rage::netSyncDataNode
 {
 private:
 	NodeCommonDataOperations m_CommonDataOperations; // 0x120
