@@ -10,10 +10,10 @@ namespace rage
 	class tlsContext
 	{
 	public:
-		char pad[0x410];      // 0x0000
-		int m_SyncDataIndex;  // 0x0410
-		char pad2[0x12EC];    // 0x0414
-		bool m_RunningScript; // 0x1700
+		char pad[0x410];       // 0x0000
+		int m_SyncThreadIndex; // 0x0410
+		char pad2[0x12EC];     // 0x0414
+		bool m_RunningScript;  // 0x1700
 
 #if _WIN32
 		static tlsContext* Get()
