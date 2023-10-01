@@ -14,6 +14,7 @@ private:
 	NodeCommonDataOperations m_CommonDataOperations; // 0x120
 	char m_Data[];                                   // 0x130
 
+public:
 #if _WIN32
 	template<typename T>
 	T& GetData()
