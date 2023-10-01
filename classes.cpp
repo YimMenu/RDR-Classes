@@ -3,6 +3,7 @@
 #include "base/fwRefAwareBase.hpp"
 #include "base/fwRefAwareBaseImpl.hpp"
 #include "entity/fwEntity.hpp"
+#include "network/sync/ped/CPedCreationData.hpp"
 #include "network/sync/CProjectBaseSyncDataNode.hpp"
 #include "network/sync/netSyncDataNode.hpp"
 #include "network/sync/netSyncNodeBase.hpp"
