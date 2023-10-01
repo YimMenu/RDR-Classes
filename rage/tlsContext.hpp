@@ -9,8 +9,10 @@ namespace rage
 #pragma pack(push, 8)
 	class tlsContext
 	{
-		char pad[0x1700];
 	public:
+		char pad[0x410];      // 0x0000
+		int m_SyncDataIndex;  // 0x0410
+		char pad2[0x12EC];    // 0x0414
 		bool m_RunningScript; // 0x1700
 
 #if _WIN32
@@ -22,5 +24,5 @@ namespace rage
 #endif
 	};
 #pragma pack(pop)
-	static_assert(sizeof(rage::tlsContext) == 0x1701);
+	static_assert(sizeof(rage::tlsContext) == 0x1704);
 }
