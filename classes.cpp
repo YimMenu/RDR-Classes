@@ -6,6 +6,7 @@
 #include "network/sync/object/CObjectCreationData.hpp"
 #include "network/sync/ped/CPedCreationData.hpp"
 #include "network/sync/player/CPlayerAppearanceData.hpp"
+#include "network/sync/vehicle/CVehicleCreationData.hpp"
 #include "network/sync/CProjectBaseSyncDataNode.hpp"
 #include "network/sync/netSyncDataNode.hpp"
 #include "network/sync/netSyncNodeBase.hpp"
