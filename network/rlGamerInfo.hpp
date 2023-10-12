@@ -7,6 +7,7 @@ namespace rage
 {
 	class rlGamerInfo : public rage::rlGamerInfoBase
 	{
+	public:
 		uint64_t m_HostToken;
 		uint64_t m_PeerId2;
 		rage::rlGamerHandle m_GamerHandle2;
