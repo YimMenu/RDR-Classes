@@ -4,6 +4,7 @@
 #include "base/fwRefAwareBaseImpl.hpp"
 #include "entity/fwEntity.hpp"
 #include "network/sync/object/CObjectCreationData.hpp"
+#include "network/sync/ped/CPedAttachData.hpp"
 #include "network/sync/ped/CPedCreationData.hpp"
 #include "network/sync/ped/CPedTaskTreeData.hpp"
 #include "network/sync/physical/CPhysicalAttachData.hpp"
