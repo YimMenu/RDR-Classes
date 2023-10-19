@@ -8,6 +8,7 @@ namespace rage
 {
     class rlGamerInfoBase
 	{
+	public:
 		uint64_t m_PeerId;
 		rage::rlGamerHandle m_GamerHandle;
 		char m_AesKey[33];
