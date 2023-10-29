@@ -10,6 +10,7 @@
 #include "network/sync/physical/CPhysicalAttachData.hpp"
 #include "network/sync/pickup/CPickupCreationData.hpp"
 #include "network/sync/player/CPlayerAppearanceData.hpp"
+#include "network/sync/player/CPlayerHealthData.hpp"
 #include "network/sync/vehicle/CVehicleCreationData.hpp"
 #include "network/sync/vehicle/CVehicleProximityMigrationData.hpp"
 #include "network/sync/CProjectBaseSyncDataNode.hpp"
