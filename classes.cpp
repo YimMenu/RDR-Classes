@@ -35,6 +35,7 @@
 #include "rage/atPlayerBits.hpp"
 #include "rage/datBitBuffer.hpp"
 #include "rage/joaat.hpp"
+#include "rage/pools.hpp"
 #include "rage/rlJson.hpp"
 #include "rage/rlMetric.hpp"
 #include "rage/tlsContext.hpp"
