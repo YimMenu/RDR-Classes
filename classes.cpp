@@ -34,6 +34,7 @@
 #include "rage/atArray.hpp"
 #include "rage/atPlayerBits.hpp"
 #include "rage/datBitBuffer.hpp"
+#include "rage/fwBasePool.hpp"
 #include "rage/joaat.hpp"
 #include "rage/pools.hpp"
 #include "rage/rlJson.hpp"
