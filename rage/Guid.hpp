@@ -7,7 +7,8 @@ public:
 
   inline constexpr size_t size() const { return Len; }
 
-  template <typename T> inline constexpr T &At(size_t i) {
+  template <typename T> 
+  inline constexpr T &At(size_t i) {
     static_assert(sizeof(T) <= sizeof(uint64_t));
     assert(i < Len);
     return *reinterpret_cast<T *>(&m_Buffer[i]);
