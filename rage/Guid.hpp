@@ -28,7 +28,8 @@ public:
     return *this;
   }
 
-  template <typename size_t Len2> inline constexpr Guid(Guid<Len2> g) {
+  template <typename size_t Len2> 
+  inline constexpr Guid(Guid<Len2> g) {
     *this = g;
   }
 
