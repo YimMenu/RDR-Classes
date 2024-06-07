@@ -13,6 +13,7 @@
 #include "network/sync/player/CPlayerHealthData.hpp"
 #include "network/sync/vehicle/CVehicleCreationData.hpp"
 #include "network/sync/vehicle/CVehicleProximityMigrationData.hpp"
+#include "network/sync/vehicle/CVehicleGadgetData.hpp"
 #include "network/sync/CProjectBaseSyncDataNode.hpp"
 #include "network/sync/netSyncDataNode.hpp"
 #include "network/sync/netSyncNodeBase.hpp"
