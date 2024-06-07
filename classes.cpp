@@ -47,3 +47,4 @@
 #include "script/scrThreadContext.hpp"
 #include "script/scrVector.hpp"
 #include "script/types.hpp"
+#include "rage/Guid.hpp"
