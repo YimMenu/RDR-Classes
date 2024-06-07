@@ -1,7 +1,8 @@
 #pragma once
 #include <cstdint>
 
-template <typename size_t Len> class Guid {
+template <typename size_t Len>
+class Guid {
 public:
   static_assert(Len > 0);
 
