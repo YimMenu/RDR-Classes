@@ -13,6 +13,7 @@
 #include "network/sync/player/CPlayerHealthData.hpp"
 #include "network/sync/vehicle/CVehicleCreationData.hpp"
 #include "network/sync/vehicle/CVehicleProximityMigrationData.hpp"
+#include "network/sync/vehicle/CVehicleGadgetData.hpp"
 #include "network/sync/CProjectBaseSyncDataNode.hpp"
 #include "network/sync/netSyncDataNode.hpp"
 #include "network/sync/netSyncNodeBase.hpp"
@@ -49,3 +50,4 @@
 #include "script/scrThreadContext.hpp"
 #include "script/scrVector.hpp"
 #include "script/types.hpp"
+#include "rage/Guid.hpp"
