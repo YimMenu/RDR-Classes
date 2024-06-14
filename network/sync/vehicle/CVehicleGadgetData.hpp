@@ -16,6 +16,7 @@ public:
   char pad_0001[15];
   float m_position[4];
   uint32_t m_num_gadgets;
+  char pad_0002[12];
   CGadgetData m_gadgets[2];
 };
-static_assert(sizeof(CVehicleGadgetNodeData) == 0x214); // Needs to be 0x220, prob from packing at 16.
+static_assert(sizeof(CVehicleGadgetNodeData) == 0x220);
