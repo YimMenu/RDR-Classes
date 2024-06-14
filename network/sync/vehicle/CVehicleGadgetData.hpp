@@ -9,7 +9,7 @@ public:
 };
 static_assert(sizeof(CGadgetData) == 0xF8);
 
-class CVehicleGadgetNodeData 
+class alignas(16) CVehicleGadgetNodeData 
 {
 public:
   bool m_has_position;
