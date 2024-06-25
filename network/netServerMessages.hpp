@@ -1,8 +1,10 @@
 #pragma once
 #include <cstdint>
 
-namespace rage {
-class ServerRPCSerializer {
+namespace rage 
+{
+class ServerRPCSerializer 
+{
 public:
   virtual int dtor() = 0;
   virtual int Unk() = 0;
@@ -10,14 +12,16 @@ public:
   virtual int GetSize() = 0;
 };
 
-class ServerMsgData {
+class ServerMsgData 
+{
 public:
   unsigned char *data;
   int size;
   bool is_json;
 };
 
-class ServerMsg {
+class ServerMsg 
+{
 public:
   virtual ~ServerMsg() = default;
   virtual void _0x08() = 0;
@@ -36,4 +40,4 @@ public:
   virtual void _0x70() = 0;
   virtual ServerMsgData *GetMsgData() = 0;
 };
-} // namespace rage
+}
