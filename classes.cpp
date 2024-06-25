@@ -6,6 +6,7 @@
 #include "network/CNetGamePlayer.hpp"
 #include "network/CNetworkPlayerMgr.hpp"
 #include "network/CScriptedGameEvent.hpp"
+#include "network/InFrame.hpp"
 #include "network/netGameEvent.hpp"
 #include "network/netObject.hpp"
 #include "network/netPeerAddress.hpp"
