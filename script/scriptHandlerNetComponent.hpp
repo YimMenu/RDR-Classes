@@ -35,6 +35,14 @@ namespace rage
         CScriptParticipant* m_Participants[32]; // 0x60
         int m_Pad3[3];                          // 0x160
         std::uint8_t m_NumParticipants;         // 0x168
+
+        inline CNetGamePlayer* GetHost()
+        {
+            if(!m_Host)
+                return nullptr;
+            
+            return m_Host->m_net_game_player;
+        }
     };
     static_assert(sizeof(rage::scriptHandlerNetComponent) == 0x170);
 }
