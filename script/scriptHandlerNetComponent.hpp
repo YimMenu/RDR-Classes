@@ -28,7 +28,8 @@ namespace rage
 
     public:
         scriptHandler* m_ScriptHandler;         // 0x08
-        char m_Pad[0x28];                       // 0x10
+        char m_Pad[0x20];                       // 0x10
+        CScriptParticipant *m_Host;             // 0x30
         std::uint8_t m_LocalParticipantId;      // 0x38
         void* m_Pad2[4];                        // 0x40
         CScriptParticipant* m_Participants[32]; // 0x60
