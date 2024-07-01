@@ -2,6 +2,7 @@
 #include "base/fwExtensibleBase.hpp"
 #include "base/fwRefAwareBase.hpp"
 #include "base/fwRefAwareBaseImpl.hpp"
+#include "base/pgBase.hpp"
 #include "entity/fwEntity.hpp"
 #include "network/CNetGamePlayer.hpp"
 #include "network/CNetworkPlayerMgr.hpp"
@@ -52,4 +53,5 @@
 #include "script/scriptHandlerNetComponent.hpp"
 #include "script/scriptId.hpp"
 #include "script/scriptIdBase.hpp"
+#include "script/scrProgram.hpp"
 #include "script/types.hpp"
