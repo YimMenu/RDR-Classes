@@ -24,6 +24,7 @@ public:
   virtual void _0x58() = 0;
   virtual void _0x60() = 0;
   virtual int _0x68() = 0;
+  virtual void RegisterNetworkObject(rage::netObject *object) = 0;
   virtual void PackCloneCreate(rage::netObject *object, CNetGamePlayer *player, rage::datBitBuffer *buffer) = 0;
   virtual bool PackCloneRemove(rage::netObject *object, CNetGamePlayer *player, bool) = 0;
   virtual void PackCloneSync(rage::netObject *object, CNetGamePlayer *player) = 0;
