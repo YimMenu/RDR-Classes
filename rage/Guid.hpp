@@ -34,7 +34,7 @@ public:
     *this = g;
   }
 
-  inline constexpr Any *get() { return reinterpret_cast<Any *>(&m_Buffer); }
+  inline constexpr void *get() { return reinterpret_cast<void*>(&m_Buffer); }
 
 private:
   alignas(8) uint64_t m_Buffer[Len];
