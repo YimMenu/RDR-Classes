@@ -4,13 +4,13 @@ class CEvent
 {
 public:
 	virtual ~CEvent() = default;
-	virtual CEvent* Clone() = 0;
-	virtual bool operator==(CEvent& other) = 0;
-	virtual int _0x18() = 0;
-	virtual float _0x20() = 0;
-	virtual float _0x28() = 0;
-	virtual bool IsEventScriptCommand() = 0;
-	virtual bool ExtractData(void* data, int size) = 0;
+	virtual CEvent* Clone() { return nullptr; }
+	virtual bool operator==(CEvent& other) { return false; }
+	virtual int _0x18() { return 0; }
+	virtual float _0x20() { return 0.0f; }
+	virtual float _0x28() { return 0.0f; }
+	virtual bool IsEventScriptCommand() { return false; }
+	virtual bool ExtractData(void* data, int size) { return false; }
 
 	char m_pad[0x58];
 };
