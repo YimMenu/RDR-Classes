@@ -41,11 +41,12 @@ typedef int PopZone;
 typedef int PersChar;
 typedef int Prompt;
 
-#define PLAYER_INDEX alignas(8) Player
-#define ENTITY_INDEX alignas(8) Entity
-#define PED_INDEX alignas(8) Ped
-#define VEHICLE_INDEX alignas(8) Vehicle
-#define INTERIOR_INDEX alignas(8) Interior
+#define PLAYER_INDEX alignas(8) int
+#define ENTITY_INDEX alignas(8) int
+#define PED_INDEX alignas(8) int
+#define PICKUP_INDEX alignas(8) int
+#define VEHICLE_INDEX alignas(8) int
+#define INTERIOR_INDEX alignas(8) int
 #define NETWORK_INDEX alignas(8) int
 
 #define SCR_HASH alignas(8) Hash
