@@ -40,6 +40,58 @@ namespace rage
 			z()
 		{
 		}
+
+		template<typename T>
+		vector3<T> operator+(const vector3<T>& other)
+		{
+			vector3<T> vec;
+			vec.x = this->x + other.x;
+			vec.y = this->y + other.y;
+			vec.z = this->z + other.z;
+			return vec;
+		}
+
+		template<typename T>
+		vector3<T> operator-(const vector3<T>& other)
+		{
+			vector3<T> vec;
+			vec.x = this->x - other.x;
+			vec.y = this->y - other.y;
+			vec.z = this->z - other.z;
+			return vec;
+		}
+
+		template<typename T>
+		vector3<T> operator*(const vector3<T>& other)
+		{
+			vector3<T> vec;
+			vec.x = this->x * other.x;
+			vec.y = this->y * other.y;
+			vec.z = this->z * other.z;
+			return vec;
+		}
+
+		template<typename T>
+		vector3<T> operator*(const float& other)
+		{
+			vector3<T> vec;
+			vec.x = this->x * other;
+			vec.y = this->y * other;
+			vec.z = this->z * other;
+			return vec;
+		}
+
+		template<typename T>
+		bool operator==(const vector3<T>& other)
+		{
+			return this->x == other.x && this->y == other.y && this->z == other.z;
+		}
+
+		template<typename T>
+		bool operator!=(const vector3<T>& other)
+		{
+			return this->x != other.x || this->y != other.y || this->z != other.z;
+		}
 	};
 
 	template<typename T>

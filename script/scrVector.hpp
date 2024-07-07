@@ -80,6 +80,11 @@ namespace rage
 			return os;
 		}
 
+		operator rage::fvector3()
+		{
+			return { x, y, z };
+		}
+
 		alignas(8) float x{};
 		alignas(8) float y{};
 		alignas(8) float z{};
