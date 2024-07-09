@@ -151,7 +151,7 @@ namespace rage
 		inline bool WriteQword(uint64_t value, int size)
 		{
 			if (size <= 32)
-				return WriteDword(value, size);
+				return WriteDword(static_cast<uint32_t>(value), size);
 
 			int low = (int)(value) & 0xFFFFFFFF;
 			int high = (int)((uint64_t)value >> 32);
