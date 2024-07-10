@@ -4,22 +4,27 @@
 
 namespace rage
 {
+    class datBitBuffer;
+
 #pragma pack(push,8)
     class rlGamerHandle
     {
     public:
-        uint64_t m_rockstar_id; //0x0000
-        uint8_t m_platform; //0x0008
-        uint8_t unk_0009; //0x0009
+        uint64_t m_RockstarId; // 0x00
+        uint16_t m_UnkData;    // 0x08
+        uint8_t m_Platform;    // 0x0A
 
         inline rlGamerHandle() = default;
 
         inline rlGamerHandle(uint64_t rockstar_id) :
-            m_rockstar_id(rockstar_id),
-            m_platform(3),
-            unk_0009(0)
+            m_RockstarId(rockstar_id),
+            m_Platform(3),
+            m_UnkData(0)
         {
         }
+
+        bool Serialize(rage::datBitBuffer& buf) const;
+        bool Deserialize(rage::datBitBuffer& buf);
     }; //Size: 0x0010
     static_assert(sizeof(rlGamerHandle) == 0x10);
 #pragma pack(pop)

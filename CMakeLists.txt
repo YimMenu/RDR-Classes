@@ -13,8 +13,8 @@ set(CMAKE_REQUIRED_QUIET ON)
 set(OK TRUE)
 
 file(GLOB_RECURSE HEADERS "**.hpp")
-file(GLOB_RECURSE SRC_MAIN "classes.cpp")
-source_group(FILES ${SRC_MAIN})
+file(GLOB_RECURSE SRC_MAIN "**.cpp")
+source_group(FILES "${SRC_MAIN}")
 add_library(RDR-Classes MODULE "${SRC_MAIN}")
 
 add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
