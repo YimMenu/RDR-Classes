@@ -2,6 +2,7 @@
 #include "rlGamerInfo.hpp"
 
 class CNetGamePlayer;
+class CNetworkScSessionMultiplayerImpl;
 
 namespace rage
 {
