@@ -23,6 +23,11 @@ namespace rage
         {
         }
 
+        inline bool operator==(const rage::rlGamerHandle other)
+        {
+            return m_Platform == other.m_Platform && m_UnkData == other.m_UnkData && m_RockstarId == other.m_RockstarId && m_Platform == 3;
+        }
+
         bool Serialize(rage::datBitBuffer& buf) const;
         bool Deserialize(rage::datBitBuffer& buf);
     }; //Size: 0x0010
