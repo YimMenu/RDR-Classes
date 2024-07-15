@@ -41,11 +41,12 @@ typedef int PopZone;
 typedef int PersChar;
 typedef int Prompt;
 
-#define PLAYER_INDEX alignas(8) Player
-#define ENTITY_INDEX alignas(8) Entity
-#define PED_INDEX alignas(8) Ped
-#define VEHICLE_INDEX alignas(8) Vehicle
-#define INTERIOR_INDEX alignas(8) Interior
+#define PLAYER_INDEX alignas(8) int
+#define ENTITY_INDEX alignas(8) int
+#define PED_INDEX alignas(8) int
+#define PICKUP_INDEX alignas(8) int
+#define VEHICLE_INDEX alignas(8) int
+#define INTERIOR_INDEX alignas(8) int
 #define NETWORK_INDEX alignas(8) int
 
 #define SCR_HASH alignas(8) Hash
@@ -58,8 +59,6 @@ template <int SIZE>
 struct SCR_TEXT_LABEL
 {
 	alignas(8) char Data[SIZE];
-private:
-	alignas(8) char _PAD[SIZE];
 public:
 	operator char* () { return Data; }
 };
@@ -102,6 +101,46 @@ struct SCR_BITSET
 	}
 };
 
+/// This is very untested, beware!
+/// MODULUS should be 32 for maximum efficiency but most Rockstar scripts use 31
+template <typename T, int COUNT, int MODULUS = 31, int SIZE = (COUNT / MODULUS) + 1>
+struct SCR_BITSET_LARGE
+{
+	SCR_ARRAY<uint64_t, SIZE> Array;
+
+	bool IsSet(T val)
+	{
+		return Array[(int)val / MODULUS] & (1 << ((int)val % MODULUS));
+	}
+
+	void Set(T val)
+	{
+		Array[(int)val / MODULUS] |= (1 << ((int)val % MODULUS));
+	}
+
+	void Clear(T val)
+	{
+		Array[(int)val / MODULUS] &= ~(1 << ((int)val % MODULUS));
+	}
+};
+
+struct SCR_DATE
+{
+	SCR_INT Year;
+	SCR_INT Month;
+	SCR_INT Day;
+	SCR_INT Hour;
+	SCR_INT Minute;
+	SCR_INT Second;
+	SCR_INT Millisecond;
+};
+
+struct SCR_GUID
+{
+	SCR_INT Element1;
+	SCR_INT Element2;
+};
+
 struct Color3
 {
 	SCR_INT R;
@@ -110,10 +149,10 @@ struct Color3
 };
 static_assert(sizeof(Color3) == 3 * 8);
 
-// serialized bitbuffer data of rage::rlGamerHandle + some padding for last gen compatibility
+// serialized bitbuffer data of rage::rlGamerHandle
 struct GAMER_HANDLE
 {
 private:
-	uint64_t Data[13];
+	uint64_t Data[2];
 };
-static_assert(sizeof(GAMER_HANDLE) == 13 * 8);
+static_assert(sizeof(GAMER_HANDLE) == 2 * 8);
