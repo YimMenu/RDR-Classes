@@ -100,6 +100,7 @@ namespace rage
 
 	class fvector3 : public vector3<float>
 	{
+	public:
 		using vector3::vector3;
 
 		fvector3 operator+(const fvector3& other) const
