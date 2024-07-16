@@ -5,11 +5,11 @@ class CNetGamePlayer;
 class CScriptParticipant 
 {
 public:
-  char pad_0000[16];                       // 0x0000
-  class CNetGamePlayer *m_net_game_player; // 0x0010
-  char pad_0018[2];                        // 0x0018
-  int16_t m_participant_index;             // 0x001A
-  char pad_001C[12];                       // 0x001C
+  char m_Pad[16];                       // 0x0000
+  class CNetGamePlayer *m_NetGamePlayer; // 0x0010
+  char m_Pad2[2];                        // 0x0018
+  int16_t m_ParticipantIndex;             // 0x001A
+  char m_Pad3[12];                       // 0x001C
 };
 static_assert(sizeof(CScriptParticipant) == 0x28);
 
@@ -77,7 +77,7 @@ public:
     if (!m_Host)
       return nullptr;
 
-    return m_Host->m_net_game_player;
+    return m_Host->m_NetGamePlayer;
   }
 };
 static_assert(sizeof(rage::scriptHandlerNetComponent) == 0x170);

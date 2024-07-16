@@ -10,48 +10,48 @@ namespace rage
 	public:
 		constexpr void reset()
 		{
-			m_arg_count = 0;
-			m_data_count = 0;
+			m_ArgCount = 0;
+			m_DataCount = 0;
 		}
 
 		template <typename T>
-		constexpr void push_arg(T&& value)
+		constexpr void PushArg(T&& value)
 		{
 			static_assert(sizeof(T) <= sizeof(std::uint64_t));
-			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(reinterpret_cast<std::uint64_t*>(m_args) + (m_arg_count++)) = std::forward<T>(value);
+			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(reinterpret_cast<std::uint64_t*>(m_Args) + (m_ArgCount++)) = std::forward<T>(value);
 		}
 
 		template <typename T>
-		constexpr T& get_arg(std::size_t index)
+		constexpr T& GetArg(std::size_t index)
 		{
 			static_assert(sizeof(T) <= sizeof(std::uint64_t));
-			return *reinterpret_cast<T*>(reinterpret_cast<std::uint64_t*>(m_args) + index);
+			return *reinterpret_cast<T*>(reinterpret_cast<std::uint64_t*>(m_Args) + index);
 		}
 
 		template <typename T>
-		constexpr void set_arg(std::size_t index, T&& value)
+		constexpr void SetArg(std::size_t index, T&& value)
 		{
 			static_assert(sizeof(T) <= sizeof(std::uint64_t));
-			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(reinterpret_cast<std::uint64_t*>(m_args) + index) = std::forward<T>(value);
+			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(reinterpret_cast<std::uint64_t*>(m_Args) + index) = std::forward<T>(value);
 		}
 
 		template <typename T>
-		constexpr T* get_return_value()
+		constexpr T* GetReturnValue()
 		{
-			return reinterpret_cast<T*>(m_return_value);
+			return reinterpret_cast<T*>(m_ReturnValue);
 		}
 
 		template <typename T>
-		constexpr void set_return_value(T&& value)
+		constexpr void SetReturnValue(T&& value)
 		{
-			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(m_return_value) = std::forward<T>(value);
+			*reinterpret_cast<std::remove_cv_t<std::remove_reference_t<T>>*>(m_ReturnValue) = std::forward<T>(value);
 		}
 	protected:
-		void* m_return_value;
-		std::uint32_t m_arg_count;
-		void* m_args;
-		std::int32_t m_data_count;
-		std::uint32_t m_data[48];
+		void* m_ReturnValue;
+		std::uint32_t m_ArgCount;
+		void* m_Args;
+		std::int32_t m_DataCount;
+		std::uint32_t m_Data[48];
 	};
 	static_assert(sizeof(scrNativeCallContext) == 0xE0);
 

@@ -76,7 +76,7 @@ public:
     }
 
 private:
-    uint32_t m_map_size;
+    uint32_t m_MapSize;
 };
 
 class pgBaseRefCounted : public pgBase {
@@ -86,44 +86,44 @@ public:
 
 class pgBaseMetaDataType {
 public:
-    static pgBaseMetaDataType* m_first;
+    static pgBaseMetaDataType* m_First;
 
     pgBaseMetaDataType(uint32_t id, uintptr_t value)
-        : m_id(id), m_value(value), m_next(nullptr) {
-        if (!m_first) {
-            m_first = this;
+        : m_Id(id), m_Value(value), m_Next(nullptr) {
+        if (!m_First) {
+            m_First = this;
         }
     }
 
     ~pgBaseMetaDataType() {
-        if (m_first == this) {
-            m_first = m_next;
+        if (m_First == this) {
+            m_First = m_Next;
         } else {
-            pgBaseMetaDataType* current = m_first;
-            while (current && current->m_next != this) {
-                current = current->m_next;
+            pgBaseMetaDataType* current = m_First;
+            while (current && current->m_Next != this) {
+                current = current->m_Next;
             }
             if (current) {
-                current->m_next = m_next;
+                current->m_Next = m_Next;
             }
         }
     }
 
     static pgBaseMetaDataType* Lookup(uint32_t id) {
-        pgBaseMetaDataType* current = m_first;
+        pgBaseMetaDataType* current = m_First;
         while (current != nullptr) {
-            if (current->m_id == id) {
+            if (current->m_Id == id) {
                 return current;
             }
-            current = current->m_next;
+            current = current->m_Next;
         }
         return nullptr;
     }
 
 private:
-    uint32_t m_id;
-    uintptr_t m_value;
-    pgBaseMetaDataType* m_next;
+    uint32_t m_Id;
+    uintptr_t m_Value;
+    pgBaseMetaDataType* m_Next;
 };
 
 }

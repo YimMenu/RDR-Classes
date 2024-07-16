@@ -6,6 +6,6 @@ namespace rage
     class fwRefAwareBaseImpl : public T
     {
     private:
-        void *m_ref; // 0x08
+        void *m_Ref; // 0x08
     };
 }

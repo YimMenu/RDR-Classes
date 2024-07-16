@@ -4,19 +4,20 @@
 class CGadgetData 
 {
 public:
-  uint32_t m_type;
-  uint8_t m_data[0xF3];
+  uint32_t m_Type;
+  uint8_t m_Data[0xF3];
 };
 static_assert(sizeof(CGadgetData) == 0xF8);
 
-class alignas(16) CVehicleGadgetNodeData 
+// TODO: Fix this
+class CVehicleGadgetDataNode
 {
 public:
-  bool m_has_position;
+  bool m_HasPosition;
   char pad_0001[15];
-  float m_position[4];
-  uint32_t m_num_gadgets;
+  float m_Position[4];
+  uint32_t m_NumGadgets;
   char pad_0002[12];
-  CGadgetData m_gadgets[2];
+  CGadgetData m_Gadgets[2];
 };
-static_assert(sizeof(CVehicleGadgetNodeData) == 0x220);
+static_assert(sizeof(CVehicleGadgetDataNode) == 0x220);
