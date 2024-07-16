@@ -12,41 +12,41 @@ namespace rage
     {
     public:
         atArray() :
-            m_data(nullptr),
-            m_size(0),
-            m_count(0)
+            m_Data(nullptr),
+            m_Size(0),
+            m_Count(0)
         {
 
         }
 
         T* begin() const
         {
-            return &m_data[0];
+            return &m_Data[0];
         }
 
         T* end() const
         {
-            return &m_data[m_size];
+            return &m_Data[m_Size];
         }
 
         T* data() const
         {
-            return m_data;
+            return m_Data;
         }
 
         std::uint16_t size() const
         {
-            return m_size;
+            return m_Size;
         }
 
         std::uint16_t count() const
         {
-            return m_count;
+            return m_Count;
         }
 
         T& operator[](std::uint16_t index) const
         {
-            return m_data[index];
+            return m_Data[index];
         }
 
         bool contains(T comparator)
@@ -62,9 +62,9 @@ namespace rage
         }
 
     private:
-        T* m_data;
-        std::uint16_t m_size;
-        std::uint16_t m_count;
+        T* m_Data;
+        std::uint16_t m_Size;
+        std::uint16_t m_Count;
     };
     static_assert(sizeof(rage::atArray<std::uint32_t>) == 0x10, "rage::atArray is not properly sized");
 #pragma pack(pop)
