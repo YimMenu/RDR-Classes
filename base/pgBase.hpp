@@ -5,6 +5,7 @@ namespace rage {
 
 class pgBase {
 public:
+    virtual ~pgBase() = default;
     virtual void ShutdownClass() = 0;
     virtual void SetHandleIndex(uint32_t index) = 0;
     virtual void Validate(uint32_t arg) = 0;
