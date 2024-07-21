@@ -10,6 +10,13 @@ enum class CampState
 	CLEANUP
 };
 
+inline std::map<CampState, std::string> g_CampStateMap = {
+	{CampState::INVALID, "Invalid"},
+	{CampState::WAITING, "Waiting"},
+	{CampState::RUNNING, "Running"},
+	{CampState::CLEANUP, "Cleanup"}
+};
+
 enum class CampLocationIndex : std::uint32_t
 {
 	GRIZZLIES_CAMP = rage::joaat("GRIZZLIES_CAMP"),
@@ -25,6 +32,22 @@ enum class CampLocationIndex : std::uint32_t
 	ROANOKE_RIDGE_CAMP = rage::joaat("ROANOKE_RIDGE_CAMP"),
 	SCARLETT_MEADOWS_CAMP = rage::joaat("SCARLETT_MEADOWS_CAMP"),
 	TALL_TREES_CAMP = rage::joaat("TALL_TREES_CAMP"),
+};
+
+inline std::map<CampLocationIndex, std::string> g_CampLocationMap = {
+	{CampLocationIndex::GRIZZLIES_CAMP, "Grizzlies"},
+	{CampLocationIndex::BAYOU_NAWAS_CAMP, "Bayou Nawas"},
+	{CampLocationIndex::BIG_VALLEY_CAMP, "Big Valley"},
+	{CampLocationIndex::CHOLLA_SPRINGS_CAMP, "Cholla Springs"},
+	{CampLocationIndex::CUMBERLAND_FOREST_CAMP, "Cumberland Forest"},
+	{CampLocationIndex::GAPTOOTH_RIDGE_CAMP, "Gaptooth Ridge"},
+	{CampLocationIndex::GREAT_PLAINS_CAMP, "Great Plains"},
+	{CampLocationIndex::HEARTLAND_CAMP, "Heartland"},
+	{CampLocationIndex::HENNIGANS_STEAD_CAMP, "Hennigans Stead"},
+	{CampLocationIndex::RIO_BRAVO_CAMP, "Rio Bravo"},
+	{CampLocationIndex::ROANOKE_RIDGE_CAMP, "Roanoke Ridge"},
+	{CampLocationIndex::SCARLETT_MEADOWS_CAMP, "Scarlett Meadows"},
+	{CampLocationIndex::TALL_TREES_CAMP, "Tall Trees"}
 };
 
 enum class CampBit
@@ -44,6 +67,22 @@ enum class CampBit
 	WHITE_FLAG_LOCKED_FOR_CONTENT
 };
 
+inline std::map<CampBit, std::string> g_CampBitMap = {
+	{CampBit::IS_LAUNCHED, "Is Launched"},
+	{CampBit::IS_ATTACKING, "Is Attacking"},
+	{CampBit::IS_ACTIVE, "Is Active"},
+	{CampBit::BLIP_DISABLED, "Blip Disabled"},
+	{CampBit::WHITE_FLAG_RAISED, "White Flag Raised"},
+	{CampBit::WHITE_FLAG_LOCKED_LOWERED, "White Flag Locked Lowered"},
+	{CampBit::SHOW_BLIPS_HIDDEN, "Show Blips Hidden"},
+	{CampBit::IS_FOLLOWER_STOLEN, "Is Follower Stolen"},
+	{CampBit::SUPPRESS_FOLLOWER, "Suppress Follower"},
+	{CampBit::FOLLOWER_DEAD, "Follower Dead"},
+	{CampBit::IS_CAMPWORKS_LAUNCHED, "Is Campworks Launched"},
+	{CampBit::WHITE_FLAG_RAISED_PRE_CONTENT, "White Flag Raised Pre Content"},
+	{CampBit::WHITE_FLAG_LOCKED_FOR_CONTENT, "White Flag Locked For Content"}
+};
+
 enum class CampContentType
 {
 	NONE,
@@ -51,6 +90,14 @@ enum class CampContentType
 	DYNAMIC_MISSION,
 	TRADER_MISSION,
 	CAMP_RAID
+};
+
+inline std::map<CampContentType, std::string> g_CampContentTypeMap = {
+	{CampContentType::NONE, "None"},
+	{CampContentType::NET_BEAT, "Net Beat"},
+	{CampContentType::DYNAMIC_MISSION, "Dynamic Mission"},
+	{CampContentType::TRADER_MISSION, "Trader Mission"},
+	{CampContentType::CAMP_RAID, "Camp Raid"}
 };
 
 struct CAMP_LOCATION
