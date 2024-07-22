@@ -67,7 +67,7 @@ namespace rage
 			return this->x != other.x || this->y != other.y || this->z != other.z;
 		}
 
-		std::string to_string() const
+		std::string ToString() const
 		{
 			std::stringstream ss;
 			ss << *this;

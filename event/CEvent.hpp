@@ -12,6 +12,6 @@ public:
 	virtual bool IsEventScriptCommand() { return false; }
 	virtual bool ExtractData(void* data, int size) { return false; }
 
-	char m_pad[0x58];
+	char m_Pad[0x58];
 };
 static_assert(sizeof(CEvent) == 0x60);

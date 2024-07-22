@@ -30,7 +30,7 @@ public:
   char m_Breakpoints[0x0C]; // 0x74 This is an atMap, which we don't have the
                             // class for ATM.
 
-  bool is_valid() const { return m_CodeSize != 0; }
+  bool IsValid() const { return m_CodeSize != 0; }
 
   std::uint32_t GetNumCodePages() const { return (m_CodeSize + 0x3FFF) >> 14; }
 
