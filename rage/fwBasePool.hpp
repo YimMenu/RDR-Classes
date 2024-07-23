@@ -11,7 +11,7 @@ namespace rage
 		uint8_t* m_Flags;          // 0x0010
 		uint32_t m_Size;           // 0x0018
 		uint32_t m_ItemSize;       // 0x001C
-		uint32_t m_0020;           // 0x0020
+		uint32_t m_NextSlotIndex;  // 0x0020
 		uint32_t m_0024;           // 0x0024
 		uint32_t m_FreeSlotIndex;  // 0x0028
 
