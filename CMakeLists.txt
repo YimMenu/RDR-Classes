@@ -15,7 +15,7 @@ set(OK TRUE)
 file(GLOB_RECURSE HEADERS "**.hpp")
 file(GLOB_RECURSE SRC_MAIN "**.cpp")
 source_group(FILES "${SRC_MAIN}")
-add_library(RDR-Classes MODULE "${SRC_MAIN}")
+add_library(${PROJECT_NAME} STATIC ${SRC_FILES} ${PUBLIC_HEADER_FILES})
 
 add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 
