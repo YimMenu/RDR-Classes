@@ -1,5 +1,6 @@
 #pragma once
 #include "script/types.hpp"
+#include "unordered_map"
 
 enum class PlayerStatus
 {
@@ -355,7 +356,7 @@ enum class Region
 	MAX
 };
 
-inline std::map<Region, std::string> g_RegionMap = {
+inline std::unordered_map<Region, std::string> g_RegionMap = {
 	{ Region::INVALID, "Invalid" },
 	{ Region::BAY_CRAWDADWILLIES, "Crawdad Willies" },
 	{ Region::BAY_MACOMBS_END, "Macomb's End" },
@@ -522,7 +523,7 @@ enum class District
 	HENNIGANS_STEAD
 };
 
-inline std::map<District, std::string> g_DistrictMap = {
+inline std::unordered_map<District, std::string> g_DistrictMap = {
 	{ District::INVALID, "Invalid" },
 	{ District::BAYOU_NWA, "Bayou Nwa" },
 	{ District::BIG_VALLEY, "Big Valley" },
@@ -562,7 +563,7 @@ enum class Language
 	CHINESE_SIMP
 };
 
-inline std::map<Language, std::string> g_LanguageMap = {
+inline std::unordered_map<Language, std::string> g_LanguageMap = {
 	{ Language::UNDEFINED, "Undefined" },
 	{ Language::ENGLISH, "English" },
 	{ Language::FRENCH, "French" },
@@ -588,7 +589,7 @@ enum class PassiveState
 	FORCED_FROM_PASSIVE
 };
 
-inline std::map<PassiveState, std::string> g_PassiveStateMap = {
+inline std::unordered_map<PassiveState, std::string> g_PassiveStateMap = {
 	{PassiveState::NOT_PASSIVE, "Not Passive"},
 	{PassiveState::WAITING_FOR_PASSIVE, "Waiting for Passive"},
 	{PassiveState::PASSIVE, "Passive"},

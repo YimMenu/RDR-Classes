@@ -27,6 +27,7 @@
 #include "network/rlGamerInfoBase.hpp"
 #include "network/rlScPeerConnection.hpp"
 #include "network/rlScSession.hpp"
+#include "network/rlScSessionEvent.hpp"
 #include "network/rlScSessionManagerImpl.hpp"
 #include "network/rlScSessionMultiplayer.hpp"
 #include "network/rlScSessionPeer.hpp"

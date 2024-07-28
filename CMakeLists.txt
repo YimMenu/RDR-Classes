@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(RDR-Classes)
+project(RDR-Classes LANGUAGES CXX VERSION 0.0.1 DESCRIPTION "Reversed structures for Red Dead Redemption 2 PC")
 
 include(CheckIncludeFileCXX)
 
@@ -15,8 +15,8 @@ set(OK TRUE)
 file(GLOB_RECURSE HEADERS "**.hpp")
 file(GLOB_RECURSE SRC_MAIN "**.cpp")
 source_group(FILES "${SRC_MAIN}")
-add_library(RDR-Classes MODULE "${SRC_MAIN}")
-
+add_library(RDR-Classes STATIC "${SRC_MAIN}" "${HEADERS}")
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 
 message(STATUS "")

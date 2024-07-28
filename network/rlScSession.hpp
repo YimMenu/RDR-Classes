@@ -16,6 +16,7 @@ namespace rage
 		}
 	};
 	static_assert(sizeof(rlScSessionId) == 0x10);
+	using rlScSessionRequestId = rlScSessionId; // for now
 
 	class rlScSessionPeerPoolEntry
 	{

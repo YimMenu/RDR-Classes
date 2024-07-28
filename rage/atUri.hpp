@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 
+#pragma pack(push, 8)
 namespace rage
 {
 	class atUri
@@ -22,3 +23,4 @@ namespace rage
 	};
 	static_assert(sizeof(atUri) == 0x488);
 }
+#pragma pack(pop)

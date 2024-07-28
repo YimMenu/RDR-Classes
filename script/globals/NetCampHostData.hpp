@@ -1,6 +1,7 @@
 #pragma once
 #include "script/types.hpp"
 #include "rage/joaat.hpp"
+#include <unordered_map> // TODO: remove!
 
 enum class CampState
 {
@@ -10,7 +11,7 @@ enum class CampState
 	CLEANUP
 };
 
-inline std::map<CampState, std::string> g_CampStateMap = {
+inline std::unordered_map<CampState, std::string> g_CampStateMap = {
 	{CampState::INVALID, "Invalid"},
 	{CampState::WAITING, "Waiting"},
 	{CampState::RUNNING, "Running"},
@@ -19,22 +20,22 @@ inline std::map<CampState, std::string> g_CampStateMap = {
 
 enum class CampLocationIndex : std::uint32_t
 {
-	GRIZZLIES_CAMP = rage::joaat("GRIZZLIES_CAMP"),
-	BAYOU_NAWAS_CAMP = rage::joaat("BAYOU_NAWAS_CAMP"),
-	BIG_VALLEY_CAMP = rage::joaat("BIG_VALLEY_CAMP"),
-	CHOLLA_SPRINGS_CAMP = rage::joaat("CHOLLA_SPRINGS_CAMP"),
-	CUMBERLAND_FOREST_CAMP = rage::joaat("CUMBERLAND_FOREST_CAMP"),
-	GAPTOOTH_RIDGE_CAMP = rage::joaat("GAPTOOTH_RIDGE_CAMP"),
-	GREAT_PLAINS_CAMP = rage::joaat("GREAT_PLAINS_CAMP"),
-	HEARTLAND_CAMP = rage::joaat("HEARTLAND_CAMP"),
-	HENNIGANS_STEAD_CAMP = rage::joaat("HENNIGANS_STEAD_CAMP"),
-	RIO_BRAVO_CAMP = rage::joaat("RIO_BRAVO_CAMP"),
-	ROANOKE_RIDGE_CAMP = rage::joaat("ROANOKE_RIDGE_CAMP"),
-	SCARLETT_MEADOWS_CAMP = rage::joaat("SCARLETT_MEADOWS_CAMP"),
-	TALL_TREES_CAMP = rage::joaat("TALL_TREES_CAMP"),
+	GRIZZLIES_CAMP = rage::Joaat("GRIZZLIES_CAMP"),
+	BAYOU_NAWAS_CAMP = rage::Joaat("BAYOU_NAWAS_CAMP"),
+	BIG_VALLEY_CAMP = rage::Joaat("BIG_VALLEY_CAMP"),
+	CHOLLA_SPRINGS_CAMP = rage::Joaat("CHOLLA_SPRINGS_CAMP"),
+	CUMBERLAND_FOREST_CAMP = rage::Joaat("CUMBERLAND_FOREST_CAMP"),
+	GAPTOOTH_RIDGE_CAMP = rage::Joaat("GAPTOOTH_RIDGE_CAMP"),
+	GREAT_PLAINS_CAMP = rage::Joaat("GREAT_PLAINS_CAMP"),
+	HEARTLAND_CAMP = rage::Joaat("HEARTLAND_CAMP"),
+	HENNIGANS_STEAD_CAMP = rage::Joaat("HENNIGANS_STEAD_CAMP"),
+	RIO_BRAVO_CAMP = rage::Joaat("RIO_BRAVO_CAMP"),
+	ROANOKE_RIDGE_CAMP = rage::Joaat("ROANOKE_RIDGE_CAMP"),
+	SCARLETT_MEADOWS_CAMP = rage::Joaat("SCARLETT_MEADOWS_CAMP"),
+	TALL_TREES_CAMP = rage::Joaat("TALL_TREES_CAMP"),
 };
 
-inline std::map<CampLocationIndex, std::string> g_CampLocationMap = {
+inline std::unordered_map<CampLocationIndex, std::string> g_CampLocationMap = {
 	{CampLocationIndex::GRIZZLIES_CAMP, "Grizzlies"},
 	{CampLocationIndex::BAYOU_NAWAS_CAMP, "Bayou Nawas"},
 	{CampLocationIndex::BIG_VALLEY_CAMP, "Big Valley"},
@@ -67,7 +68,7 @@ enum class CampBit
 	WHITE_FLAG_LOCKED_FOR_CONTENT
 };
 
-inline std::map<CampBit, std::string> g_CampBitMap = {
+inline std::unordered_map<CampBit, std::string> g_CampBitMap = {
 	{CampBit::IS_LAUNCHED, "Is Launched"},
 	{CampBit::IS_ATTACKING, "Is Attacking"},
 	{CampBit::IS_ACTIVE, "Is Active"},
@@ -92,7 +93,7 @@ enum class CampContentType
 	CAMP_RAID
 };
 
-inline std::map<CampContentType, std::string> g_CampContentTypeMap = {
+inline std::unordered_map<CampContentType, std::string> g_CampContentTypeMap = {
 	{CampContentType::NONE, "None"},
 	{CampContentType::NET_BEAT, "Net Beat"},
 	{CampContentType::DYNAMIC_MISSION, "Dynamic Mission"},
