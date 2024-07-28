@@ -14,7 +14,9 @@ public:
 	uint32_t m_Timestamp; //0x0044
 	bool m_HasPositionData; //0x0048
 	alignas(16) rage::fvector3 m_Position; //0x0050
-	rage::vector3<int> m_Velocity; //0x0060
+	int m_VelocityX;
+	int m_VelocityY;
+	int m_VelocityZ;
 	uint32_t m_UnkAmount; //0x006C
 }; //Size: 0x0070
 static_assert(sizeof(CVehicleProximityMigrationData) == 0x70);

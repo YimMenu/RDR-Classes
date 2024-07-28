@@ -4,13 +4,13 @@
 #pragma pack(push, 0x10)
 namespace rage
 {
-	template<typename T>
+	// atVector<float, 2>?
 	class vector2
 	{
 	public:
-		T x, y;
+		float x, y;
 
-		constexpr vector2(T x, T y) :
+		constexpr vector2(float x, float y) :
 			x(x),
 			y(y)
 		{
@@ -23,13 +23,16 @@ namespace rage
 		}
 	};
 
-	template<typename T>
+	// atVector<float, 3>?
 	class vector3
 	{
 	public:
-		T x, y, z;
+		float x, y, z;
+	private:
+		int _PAD; // because alignof doesn't work
+	public:
 
-		constexpr vector3(T x, T y, T z) :
+		constexpr vector3(float x, float y, float z) :
 			x(x),
 			y(y),
 			z(z)
@@ -43,26 +46,72 @@ namespace rage
 		{
 		}
 
-		template<typename T>
-		bool operator==(const vector3<T>& other) const
+		bool operator==(const vector3& other) const
 		{
 			return this->x == other.x && this->y == other.y && this->z == other.z;
 		}
 
 		template<typename T>
-		bool operator!=(const vector3<T>& other) const
+		bool operator!=(const vector3& other) const
 		{
 			return this->x != other.x || this->y != other.y || this->z != other.z;
 		}
-	};
 
-	template<typename T>
+		vector3 operator+(const vector3& other) const
+		{
+			vector3 vec;
+			vec.x = this->x + other.x;
+			vec.y = this->y + other.y;
+			vec.z = this->z + other.z;
+			return vec;
+		}
+
+		vector3 operator-(const vector3& other) const
+		{
+			vector3 vec;
+			vec.x = this->x - other.x;
+			vec.y = this->y - other.y;
+			vec.z = this->z - other.z;
+			return vec;
+		}
+
+		vector3 operator*(const vector3& other) const
+		{
+			vector3 vec;
+			vec.x = this->x * other.x;
+			vec.y = this->y * other.y;
+			vec.z = this->z * other.z;
+			return vec;
+		}
+
+		vector3 operator*(const float& other) const
+		{
+			vector3 vec;
+			vec.x = this->x * other;
+			vec.y = this->y * other;
+			vec.z = this->z * other;
+			return vec;
+		}
+
+		inline float GetMagnitude() const
+		{
+			return sqrt(x * x + y * y + z * z);
+		}
+
+		inline float GetDistance(const vector3& other) const
+		{
+			return (*this - other).GetMagnitude();
+		}
+	};
+	static_assert(sizeof(rage::vector3) == 0x10);
+
+	// atVector<float, 4>?
 	class vector4
 	{
 	public:
-		T x, y, z, w;
+		float x, y, z, w;
 
-		constexpr vector4(T x, T y, T z, T w) :
+		constexpr vector4(float x, float y, float z, float w) :
 			x(x),
 			y(y),
 			z(z),
@@ -79,75 +128,23 @@ namespace rage
 		}
 	};
 
-	template<typename T>
 	union matrix34
 	{
-		T data[3][4];
-		struct { struct { T x, y, z, w; } rows[3]; };
+		float data[3][4];
+		struct { struct { float x, y, z, w; } rows[3]; };
 	};
 
-	template<typename T>
 	union matrix44
 	{
-		T data[4][4];
-		struct { struct { T x, y, z, w; } rows[4]; };
+		float data[4][4];
+		struct { struct { float x, y, z, w; } rows[4]; };
 	};
 
-	typedef vector2<float> fvector2;
-	typedef vector4<float> fvector4;
-	typedef matrix34<float> fmatrix34;
-	typedef matrix44<float> fmatrix44;
 
-	class fvector3 : public vector3<float>
-	{
-	public:
-		using vector3::vector3;
-
-		fvector3 operator+(const fvector3& other) const
-		{
-			fvector3 vec;
-			vec.x = this->x + other.x;
-			vec.y = this->y + other.y;
-			vec.z = this->z + other.z;
-			return vec;
-		}
-
-		fvector3 operator-(const fvector3& other) const
-		{
-			fvector3 vec;
-			vec.x = this->x - other.x;
-			vec.y = this->y - other.y;
-			vec.z = this->z - other.z;
-			return vec;
-		}
-
-		fvector3 operator*(const fvector3& other) const
-		{
-			fvector3 vec;
-			vec.x = this->x * other.x;
-			vec.y = this->y * other.y;
-			vec.z = this->z * other.z;
-			return vec;
-		}
-
-		fvector3 operator*(const float& other) const
-		{
-			fvector3 vec;
-			vec.x = this->x * other;
-			vec.y = this->y * other;
-			vec.z = this->z * other;
-			return vec;
-		}
-
-		inline float GetMagnitude() const
-		{
-			return std::sqrt(x * x + y * y + z * z);
-		}
-
-		inline float GetDistance(const rage::fvector3& other) const
-		{
-			return (*this - other).GetMagnitude();
-		}
-	};
-}
+	// backwards compatibility
+	// TODO: remove these!
+	using fvector2 = vector2;
+	using fvector3 = vector3;
+	using fvector4 = vector4;
+};
 #pragma pack(pop)

@@ -44,6 +44,8 @@
 #include "network/sync/physical/CPhysicalAttachData.hpp"
 #include "network/sync/pickup/CPickupCreationData.hpp"
 #include "network/sync/player/CPlayerAppearanceData.hpp"
+#include "network/sync/player/CPlayerCameraUncommonData.hpp"
+#include "network/sync/player/CPlayerGameStateUncommonNode.hpp"
 #include "network/sync/player/CPlayerHealthData.hpp"
 #include "network/sync/vehicle/CVehicleCreationData.hpp"
 #include "network/sync/vehicle/CVehicleGadgetData.hpp"
