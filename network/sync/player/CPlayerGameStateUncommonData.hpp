@@ -3,7 +3,7 @@
 #include "rage/vector.hpp"
 
 #pragma pack(push, 8)
-class CPlayerGameStateUncommonNode
+class CPlayerGameStateUncommonData
 {
 private:
 	char m_Pad[0x78];
@@ -18,6 +18,5 @@ public:
 private:
 	char m_Pad3[0xA];                        // 0x96
 }; //Size: 0x0010
-constexpr int a = offsetof(CPlayerGameStateUncommonNode, CPlayerGameStateUncommonNode::m_SpectatePos);
-static_assert(sizeof(CPlayerGameStateUncommonNode) == 0xA0);
+static_assert(sizeof(CPlayerGameStateUncommonData) == 0xA0);
 #pragma pack(pop)
