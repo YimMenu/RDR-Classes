@@ -5,14 +5,17 @@ class CPedTaskData
 {
 public:
 	uint32_t m_TaskType; //0x0000
-	char pad_0004[16]; //0x0004
+	uint32_t m_TaskUnk1; //0x0004
+	uint32_t m_TaskTreeType; //0x0008
+	uint32_t m_TaskSequenceId; //0x000C
+	uint32_t m_TaskTreeDepth; //0x0010
 }; //Size: 0x0014
 static_assert(sizeof(CPedTaskData) == 0x14);
 
 class CPedTaskTree
 {
 public:
-	uint32_t m_TreeType; //0x0000
+	uint32_t m_TreeType; //0x0000 not serialized
 	char pad_0004[4]; //0x0004 unused
 	uint32_t m_NumTasks; //0x0008
 	bool m_SequenceTree; //0x000C
@@ -21,6 +24,7 @@ public:
 }; //Size: 0x0110
 static_assert(sizeof(CPedTaskTree) == 0x110);
 
+// TODO: incorrect name
 class CPedTaskTreeData
 {
 public:
