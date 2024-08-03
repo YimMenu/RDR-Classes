@@ -1,7 +1,8 @@
 #pragma once
-#include "entity/fwEntity.hpp"
+#include "physical/CPhysical.hpp"
 
-// TODO
-class CPed : public rage::fwEntity
+class CPed : public CPhysical
 {
+	char m_Pad6[0x18]; // 0x0368
 };
+static_assert(sizeof(CPed) == 0x380);

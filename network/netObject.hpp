@@ -16,6 +16,8 @@ namespace rage
         uint8_t m_OwnerId;             // 0x45
         uint8_t m_MigratingOwnerId;    // 0x46
         bool m_IsRemotelyControlled;   // 0x47
+        char m_Pad2[0xA8];             // 0x48
+        int m_OwnershipToken;          // 0xF0
     };
-    static_assert(sizeof(rage::netObject) == 0x48);
+    static_assert(sizeof(rage::netObject) == 0xF8);
 }
