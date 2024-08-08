@@ -159,24 +159,58 @@ namespace rage
 			return WriteDword(low, 32) && WriteDword(high, size - 32);
 		}
 
+		inline bool ReadInt64(int64_t* value, int size)
+		{
+			unsigned int last_bit{};
+			uint64_t rest{};
+
+			if (!ReadQword((uint64_t*)&last_bit, 1) || ReadQword(&rest, size - 1))
+				return false;
+
+			*value = ((uint64_t)last_bit << 63) | rest ^ -(int64_t)last_bit;
+			return true;
+		}
+
+		inline bool WriteInt64(int64_t value, int size)
+		{
+			auto last_bit = value >> 63;
+			if (!WriteQword(last_bit, 1) || !WriteQword((uint64_t)value ^ -(__int64)(unsigned int)last_bit, size - 1))
+				return false;
+
+			return true;
+		}
+
 		// unsigned
+		// TODO: signed likely only works for 64 bit values!
 		template<typename T>
-		T Read(int size)
+		T Read(int size, bool _signed = false)
 		{
 			static_assert(sizeof(T) <= 8);
 
 			uint64_t data{};
-			ReadQword(&data, size);
-			return T(data);
+			int64_t data_signed{};
+			if (_signed)
+				ReadInt64(&data_signed, size);
+			else
+				ReadQword(&data, size);
+
+			if (_signed)
+				return T(data_signed);
+			else
+				return T(data);
 		}
 
 		// unsigned
+		// TODO: signed likely only works for 64 bit values!
 		template<typename T>
-		void Write(T data, int size)
+		void Write(T data, int size, bool _signed = false)
 		{
 			static_assert(sizeof(T) <= 8);
 
-			WriteQword(uint64_t(data), size);
+			if (_signed)
+				WriteInt64(int64_t(data), size);
+			else
+				WriteQword(uint64_t(data), size);
 		}
 
 	public:

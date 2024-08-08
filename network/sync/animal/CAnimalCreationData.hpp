@@ -2,7 +2,7 @@
 #include <cstdint>
 
 // TODO, CPedBaseCreationData
-class CPedCreationData
+class CAnimalCreationData
 {
 public:
 	char pad_0000[4]; //0x0000
@@ -10,6 +10,6 @@ public:
 	uint32_t m_ModelHash; //0x0008
 	char pad_000C[18]; //0x000C
 	bool m_BannedPed; //0x001E
-	char pad_001F[13]; //0x001F
-}; //Size: 0x002C
-static_assert(sizeof(CPedCreationData) == 0x2C);
+	char pad_001F[5]; //0x001F
+}; //Size: 0x0024
+static_assert(sizeof(CAnimalCreationData) == 0x24);
