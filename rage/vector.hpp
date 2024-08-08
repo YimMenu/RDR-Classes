@@ -130,7 +130,7 @@ namespace rage
 
 	union matrix34
 	{
-		float data[3][4];
+		float data[4][4]; // yes, the underlying representation is 4x4
 		struct { struct { float x, y, z, w; } rows[3]; };
 	};
 
