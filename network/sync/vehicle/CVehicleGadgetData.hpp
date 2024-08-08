@@ -1,8 +1,7 @@
 #pragma once
 #include <cstdint>
 
-class CGadgetData 
-{
+class CGadgetData {
 public:
   uint32_t m_Type;
   uint8_t m_Data[0xF3];
@@ -10,8 +9,7 @@ public:
 static_assert(sizeof(CGadgetData) == 0xF8);
 
 // TODO: Fix this
-class CVehicleGadgetDataNode
-{
+class CVehicleGadgetData {
 public:
   bool m_HasPosition;
   char pad_0001[15];
@@ -20,4 +18,4 @@ public:
   char pad_0002[12];
   CGadgetData m_Gadgets[2];
 };
-static_assert(sizeof(CVehicleGadgetDataNode) == 0x220);
+static_assert(sizeof(CVehicleGadgetData) == 0x220);
