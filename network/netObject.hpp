@@ -10,7 +10,7 @@ namespace rage
 #pragma pack(push, 1)
         struct GUID
         {
-            std::uint32_t m_CreationTime: 48;
+            std::uint32_t m_CreationTime; //: 48; (compiler broken?)
             std::uint16_t m_ObjectToken: 16;
             std::uint32_t m_AccountId: 32;
             std::uint16_t m_AccountComponent: 16;
