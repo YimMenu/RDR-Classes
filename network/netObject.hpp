@@ -7,6 +7,18 @@ namespace rage
     class netObject
     {
     public:
+#pragma pack(push, 1)
+        struct GUID
+        {
+            std::uint32_t m_CreationTime: 48;
+            std::uint16_t m_ObjectToken: 16;
+            std::uint32_t m_AccountId: 32;
+            std::uint16_t m_AccountComponent: 16;
+            std::uint8_t m_ObjectType: 8;
+            std::uint8_t m_CreationCycle: 8;
+        };
+#pragma pack(pop)
+
         virtual ~netObject() = 0;
 
         char m_Pad[0x38];              // 0x08
@@ -18,6 +30,8 @@ namespace rage
         bool m_IsRemotelyControlled;   // 0x47
         char m_Pad2[0xA8];             // 0x48
         int m_OwnershipToken;          // 0xF0
+        char m_Pad3[0x14];             // 0xF4
+        GUID m_Guid;                   // 0x108
     };
-    static_assert(sizeof(rage::netObject) == 0xF8);
+    static_assert(sizeof(rage::netObject) == 0x118);
 }
