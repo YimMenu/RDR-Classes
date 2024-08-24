@@ -10,12 +10,38 @@ namespace rage
 #pragma pack(push, 1)
         struct GUID
         {
-            std::uint32_t m_CreationTime; //: 48; (compiler broken?)
-            std::uint16_t m_ObjectToken: 16;
-            std::uint32_t m_AccountId: 32;
-            std::uint16_t m_AccountComponent: 16;
-            std::uint8_t m_ObjectType: 8;
-            std::uint8_t m_CreationCycle: 8;
+            std::uint64_t m_Data1;
+            std::uint64_t m_Data2;
+
+            std::uint32_t GetAccountId() const
+            {
+                return m_Data2 & 0xFFFFFFFF;
+            }
+
+            std::uint16_t GetAccountComponent() const
+            {
+                return (m_Data2 >> 32) & 0xFFFF;
+            }
+
+            std::uint64_t GetCreationTime() const
+            {
+                return m_Data1 & 0xFFFFFFFFFFFF;
+            }
+
+            std::uint16_t GetObjectToken() const
+            {
+                return m_Data1 >> 48;
+            }
+
+            std::uint16_t GetObjectType() const
+            {
+                return (m_Data2 >> 48) & 0xFF;
+            }
+
+            std::uint8_t GetCreationCycle() const
+            {
+                return m_Data2 >> 56;
+            }
         };
 #pragma pack(pop)
 
