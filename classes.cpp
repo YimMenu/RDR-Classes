@@ -41,6 +41,7 @@
 #include "network/sync/netSyncNodeBase.hpp"
 #include "network/sync/netSyncTree.hpp"
 #include "network/sync/animal/CAnimalCreationData.hpp"
+#include "network/sync/animscene/CAnimSceneInfrequentData.hpp"
 #include "network/sync/object/CObjectCreationData.hpp"
 #include "network/sync/ped/CPedAttachData.hpp"
 #include "network/sync/ped/CPedCreationData.hpp"
