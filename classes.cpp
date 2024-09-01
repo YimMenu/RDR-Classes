@@ -94,3 +94,4 @@
 #include "script/scriptIdBase.hpp"
 #include "script/scrProgram.hpp"
 #include "script/types.hpp"
+#include "train/CTrainConfig.hpp"
