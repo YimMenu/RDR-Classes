@@ -19,6 +19,7 @@
 #include "network/CNetworkScSessionPlayer.hpp"
 #include "network/CScriptedGameEvent.hpp"
 #include "network/InFrame.hpp"
+#include "network/netEncryption.hpp"
 #include "network/netGameEvent.hpp"
 #include "network/netObject.hpp"
 #include "network/netPeerAddress.hpp"
